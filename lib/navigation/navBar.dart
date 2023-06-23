@@ -17,6 +17,12 @@ class BottomNav extends StatefulWidget {
 class _BottomNavState extends State<BottomNav> {
   int currentIndex = 0;
 
+  void onTabSelected(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,20 +53,15 @@ class _BottomNavState extends State<BottomNav> {
             IconButton(
               icon: const Icon(Iconsax.arrow_left),
               color: Colors.white,
-              onPressed: () {
-                setState(() {
-                  currentIndex = 0;
-                });
-              },
+              onPressed: () => onTabSelected(0),
             ),
             IconButton(
-              icon: const Icon(Iconsax.home),
+              icon: const Icon(
+                Iconsax.home,
+              ),
               color: Colors.white,
-              onPressed: () {
-                setState(() {
-                  currentIndex = 1;
-                });
-              },
+              onPressed: () => onTabSelected(1),
+              // Set index 1 as selected
             ),
             Container(
               decoration: const BoxDecoration(
@@ -70,30 +71,21 @@ class _BottomNavState extends State<BottomNav> {
               child: IconButton(
                 icon: const Icon(Iconsax.add),
                 color: Colors.white,
-                onPressed: () {
-                  setState(() {
-                    currentIndex = 2;
-                  });
-                },
+                onPressed: () => onTabSelected(2),
+                // Set index 2 as selected
               ),
             ),
             IconButton(
-              icon: const Icon(Iconsax.message),
+              icon: const Icon(Iconsax.messages_24),
               color: Colors.white,
-              onPressed: () {
-                setState(() {
-                  currentIndex = 3;
-                });
-              },
+              onPressed: () => onTabSelected(3),
+              // Set index 3 as selected
             ),
             IconButton(
               icon: const Icon(Iconsax.arrow_right_1),
               color: Colors.white,
-              onPressed: () {
-                setState(() {
-                  currentIndex = 4;
-                });
-              },
+              onPressed: () => onTabSelected(4),
+              // Set index 4 as selected
             ),
           ],
         ),
