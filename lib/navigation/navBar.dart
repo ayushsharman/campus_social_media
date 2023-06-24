@@ -15,7 +15,7 @@ class BottomNav extends StatefulWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
-  int currentIndex = 0;
+  int currentIndex = 1;
 
   void onTabSelected(int index) {
     setState(() {
