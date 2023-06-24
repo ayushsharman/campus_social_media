@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:social_media_campus_app/constant/appColos.dart';
 
-class textPostCard extends StatelessWidget {
+class TextPostCard extends StatelessWidget {
   final String image;
 
-  const textPostCard({
+  const TextPostCard({
     Key? key,
     required this.image,
   }) : super(key: key);
@@ -24,29 +27,32 @@ class textPostCard extends StatelessWidget {
                   backgroundImage: AssetImage(image),
                 ),
                 const SizedBox(width: 8),
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'John Doe',
-                      style: TextStyle(
+                      'Lisa Kio',
+                      style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
                     ),
                     Text(
-                      'Last active: 20 minutes ago',
-                      style: TextStyle(
+                      '20m ago',
+                      style: GoogleFonts.poppins(
                         fontSize: 12,
-                        color: Colors.blue,
+                        color: AppColor.blue,
                       ),
                     ),
                   ],
                 ),
                 const Spacer(),
                 IconButton(
-                  icon: const Icon(Icons.more_vert),
+                  icon: const Icon(
+                    Icons.more_vert,
+                    color: AppColor.blue,
+                  ),
                   onPressed: () {
                     // Handle the icon click
                   },
@@ -54,10 +60,10 @@ class textPostCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            const Text(
+            Text(
               '“If you think you are too small to make a difference, try sleeping with a mosquito.”\n~ Dalai Lama',
-              style: TextStyle(
-                fontSize: 14,
+              style: GoogleFonts.poppins(
+                fontSize: 16,
                 color: Colors.black,
               ),
             ),
@@ -67,24 +73,44 @@ class textPostCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: const ImageIcon(
+                            AssetImage('assets/broken heart.png'),
+                          ),
+                          onPressed: () {
+                            // Handle like button click
+                          },
+                        ),
+                        Text(
+                          "120",
+                          style: GoogleFonts.poppins(),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(width: 8),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: const Icon(Iconsax.message),
+                          onPressed: () {
+                            // Handle comment button click
+                          },
+                        ),
+                        Text(
+                          "45",
+                          style: GoogleFonts.poppins(),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(width: 8),
                     IconButton(
-                      icon: const Icon(Icons.thumb_up),
+                      icon: const ImageIcon(
+                        AssetImage('assets/hand shake.png'),
+                      ),
                       onPressed: () {
                         // Handle like button click
-                      },
-                    ),
-                    const SizedBox(width: 8),
-                    IconButton(
-                      icon: const Icon(Icons.comment),
-                      onPressed: () {
-                        // Handle comment button click
-                      },
-                    ),
-                    const SizedBox(width: 8),
-                    IconButton(
-                      icon: const Icon(Icons.meeting_room),
-                      onPressed: () {
-                        // Handle meet button click
                       },
                     ),
                   ],
@@ -92,18 +118,18 @@ class textPostCard extends StatelessWidget {
                 Row(
                   children: [
                     IconButton(
-                      icon: const Icon(Icons.share),
+                      icon: const Icon(Iconsax.send_2),
+                      onPressed: () {
+                        // Handle DM button click
+                      },
+                    ),
+                    IconButton(
+                      icon: const Icon(Iconsax.share5),
                       onPressed: () {
                         // Handle share button click
                       },
                     ),
                     const SizedBox(width: 8),
-                    IconButton(
-                      icon: const Icon(Icons.message),
-                      onPressed: () {
-                        // Handle DM button click
-                      },
-                    ),
                   ],
                 ),
               ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:social_media_campus_app/constant/appColos.dart';
+import 'package:social_media_campus_app/widgets/home/posts/imagePost.dart';
 import 'package:social_media_campus_app/widgets/home/posts/textPost.dart';
 import 'package:social_media_campus_app/widgets/home/stories/stories.dart';
 
@@ -17,7 +19,7 @@ class HomePage extends StatelessWidget {
             'Feeleeria',
             style: GoogleFonts.sail(
               fontSize: 40,
-              color: const Color.fromRGBO(255, 92, 0, 1),
+              color: AppColor.red,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -52,32 +54,38 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: const Column(
-        children: [
-          //Story section
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 10.0),
-            child: StoryIcon(
-              images: [
-                'assets/Profile Photo.png',
-                'assets/Profile Photo (1).png',
-                'assets/Profile Photo (2).png',
-              ],
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [
+            //Story section
+            SizedBox(
+              height: 20,
             ),
-          ),
-          Divider(
-            height: 1,
-            color: Colors.grey,
-          ),
+            Padding(
+              padding: EdgeInsets.only(left: 10.0),
+              child: StoryIcon(
+                images: [
+                  'assets/Profile Photo.png',
+                  'assets/Profile Photo (1).png',
+                  'assets/Profile Photo (2).png',
+                ],
+              ),
+            ),
+            Divider(
+              height: 1,
+              color: Colors.grey,
+            ),
 
-          //Post section
-          textPostCard(
-            image: 'assets/Profile Photo.png',
-          ),
-        ],
+            //Post section
+            TextPostCard(
+              image: 'assets/Profile Photo.png',
+            ),
+            ImagePostCard(
+              post: "assets/post.png",
+              image: "assets/Profile Photo (1).png",
+            )
+          ],
+        ),
       ),
     );
   }

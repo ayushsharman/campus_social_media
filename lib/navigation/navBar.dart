@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../constant/appColos.dart';
 import '../pages/chat.dart';
 import '../pages/home.dart';
 import '../pages/system.dart';
@@ -39,7 +40,7 @@ class _BottomNavState extends State<BottomNav> {
       bottomNavigationBar: Container(
         height: 88,
         decoration: const BoxDecoration(
-          color: Color.fromRGBO(62, 142, 227, 1),
+          color: AppColor.blue,
           boxShadow: [
             BoxShadow(
               color: Colors.black12,
@@ -66,7 +67,7 @@ class _BottomNavState extends State<BottomNav> {
             Container(
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color.fromRGBO(255, 92, 0, 1),
+                color: AppColor.red,
               ),
               child: IconButton(
                 icon: const Icon(Iconsax.add),
