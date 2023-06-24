@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
-import 'package:social_media_campus_app/widgets/home/posts/imagePost.dart';
 import 'package:social_media_campus_app/widgets/home/posts/textPost.dart';
-import 'package:social_media_campus_app/widgets/home/stories/stories.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 class TextPage extends StatefulWidget {
@@ -37,7 +35,7 @@ class _TextPageState extends State<TextPage>
         backgroundColor: Colors.white,
         title: Center(
           child: Text(
-            'Feeleeria',
+            'Text',
             style: GoogleFonts.sail(
               fontSize: 40,
               color: AppColor.red,
