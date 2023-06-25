@@ -3,9 +3,9 @@ import 'package:iconsax/iconsax.dart';
 
 import '../constant/appColos.dart';
 import '../pages/chat.dart';
-import '../pages/home.dart';
-import '../pages/system.dart';
-import '../pages/text.dart';
+import '../pages/homePages/home.dart';
+import '../pages/homePages/system.dart';
+import '../pages/homePages/text.dart';
 import '../pages/upload.dart';
 
 class BottomNav extends StatefulWidget {

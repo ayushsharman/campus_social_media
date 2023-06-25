@@ -4,7 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
-import '../widgets/home/posts/imagePost.dart';
+import '../../widgets/home/posts/imagePost.dart';
 
 class SystemPage extends StatefulWidget {
   const SystemPage({Key? key}) : super(key: key);
