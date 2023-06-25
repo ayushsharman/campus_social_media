@@ -52,85 +52,103 @@ class ChatPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 10),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 10),
 
-          //Search Icon
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            child: TextField(
-              decoration: InputDecoration(
-                hintStyle: GoogleFonts.poppins(),
-                hintText: 'Who do you want to chat with?',
-                suffixIcon: const Icon(Iconsax.search_normal),
-                filled: true,
-                fillColor: Colors.grey[200],
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: BorderSide.none,
+            //Search Icon
+            Container(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintStyle: GoogleFonts.poppins(),
+                  hintText: 'Who do you want to chat with?',
+                  suffixIcon: const Icon(Iconsax.search_normal),
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: BorderSide.none,
+                  ),
                 ),
               ),
             ),
-          ),
 
-          //Divider
-          const Divider(
-            height: 1,
-            color: Colors.grey,
-          ),
-          const SizedBox(height: 15),
-
-          //Pinned Messages
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Row(
-              children: [
-                CircularChats(
-                  image: 'assets/Profile Photo (1).png',
-                  name: "John Doe",
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                CircularChats(
-                  image: 'assets/Profile Photo.png',
-                  name: "Lisa Koi",
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                CircularChats(
-                  image: 'assets/Profile Photo (2).png',
-                  name: "Zoe Lu",
-                ),
-              ],
+            //Divider
+            const Divider(
+              height: 1,
+              color: Colors.grey,
             ),
-          ),
+            const SizedBox(height: 15),
 
-          const SizedBox(height: 10),
-          const Divider(
-            height: .7,
-            color: Colors.grey,
-          ),
+            //Recent Messages
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Recent", style: GoogleFonts.poppins(fontSize: 16)),
+                  const SizedBox(height: 10),
+                  Row(
+                    children: [
+                      CircularChats(
+                        image: 'assets/Profile Photo (1).png',
+                        name: "John Doe",
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      CircularChats(
+                        image: 'assets/Profile Photo.png',
+                        name: "Lisa Koi",
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      CircularChats(
+                        image: 'assets/Profile Photo (2).png',
+                        name: "Zoe Lu",
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
 
-          //Message Tray
-          MessageTray(
-            name: 'John Doe',
-            image: 'assets/Profile Photo.png',
-            message: 'hello!',
-          ),
-          MessageTray(
-            name: 'Zoe Lu',
-            image: 'assets/Profile Photo (2).png',
-            message: 'How are you what have you been doing?',
-          ),
-          MessageTray(
-            name: 'Jacob Williams',
-            message: "I'm the king?",
-          ),
-        ],
+            const SizedBox(height: 10),
+            const Divider(
+              height: .7,
+              color: Colors.grey,
+            ),
+
+            //Message Tray
+            MessageTray(
+              name: 'John Doe',
+              image: 'assets/Profile Photo.png',
+              message: 'hello!',
+            ),
+            MessageTray(
+              name: 'Zoe Lu',
+              image: 'assets/Profile Photo (2).png',
+              message: 'How are you what have you been doing?',
+            ),
+            MessageTray(
+              name: 'Jacob Williams',
+              message: "I'm the king!",
+            ),
+            MessageTray(
+              name: 'Kane',
+              image: 'assets/Profile Photo (1).png',
+              message: "Meet me on sunday",
+            ),
+            MessageTray(
+              name: 'Undertake',
+              message: "Dont' go on sunday",
+            ),
+          ],
+        ),
       ),
     );
   }
