@@ -15,54 +15,57 @@ class MessageTray extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      decoration: const BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: Colors.grey,
-            width: 1.0,
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        padding: const EdgeInsets.all(16.0),
+        decoration: const BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: Colors.grey,
+              width: 1.0,
+            ),
           ),
         ),
-      ),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundImage: AssetImage(image ?? "assets/blank profile.png"),
-          ),
-          const SizedBox(width: 16.0),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
-                const SizedBox(height: 8.0),
-                Text(
-                  message,
-                  style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    color: AppColor.orange,
-                  ),
-                ),
-              ],
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: 30,
+              backgroundImage: AssetImage(image ?? "assets/blank profile.png"),
             ),
-          ),
-          Text(
-            '4h ago',
-            style: GoogleFonts.poppins(
-              fontSize: 14,
-              color: AppColor.blue,
+            const SizedBox(width: 16.0),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    name,
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+                  Text(
+                    message,
+                    style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      color: AppColor.orange,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+            Text(
+              '4h ago',
+              style: GoogleFonts.poppins(
+                fontSize: 14,
+                color: AppColor.blue,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
