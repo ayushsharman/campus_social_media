@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
-import 'package:social_media_campus_app/widgets/home/posts/textPost.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 import '../widgets/home/posts/imagePost.dart';
@@ -40,7 +39,7 @@ class _TextPageState extends State<SystemPage>
             'System',
             style: GoogleFonts.sail(
               fontSize: 40,
-              color: AppColor.red,
+              color: AppColor.orange,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -90,7 +89,7 @@ class _TextPageState extends State<SystemPage>
                 labelColor: Colors.white,
                 unselectedLabelColor: Colors.black,
                 controller: _tabController,
-                indicatorColor: AppColor.red,
+                indicatorColor: AppColor.orange,
                 labelStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold),
                 tabs: const [
                   Tab(

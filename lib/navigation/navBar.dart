@@ -67,7 +67,7 @@ class _BottomNavState extends State<BottomNav> {
             Container(
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColor.red,
+                color: AppColor.orange,
               ),
               child: IconButton(
                 icon: const Icon(Iconsax.add),

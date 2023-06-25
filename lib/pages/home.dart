@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
             'Feeleeria',
             style: GoogleFonts.sail(
               fontSize: 40,
-              color: AppColor.red,
+              color: AppColor.orange,
               fontWeight: FontWeight.bold,
             ),
           ),

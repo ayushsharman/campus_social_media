@@ -38,7 +38,7 @@ class _TextPageState extends State<TextPage>
             'Text',
             style: GoogleFonts.sail(
               fontSize: 40,
-              color: AppColor.red,
+              color: AppColor.orange,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -88,7 +88,7 @@ class _TextPageState extends State<TextPage>
                 labelColor: Colors.white,
                 unselectedLabelColor: Colors.black,
                 controller: _tabController,
-                indicatorColor: AppColor.red,
+                indicatorColor: AppColor.orange,
                 labelStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold),
                 tabs: const [
                   Tab(
