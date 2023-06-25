@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class CircularChats extends StatelessWidget {
   String name;
   String image;
+
   CircularChats({
     Key? key,
     required this.name,

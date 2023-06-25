@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../constant/appColos.dart';
-import '../pages/chat.dart';
+import '../pages/chatPages/chat.dart';
 import '../pages/homePages/home.dart';
 import '../pages/homePages/system.dart';
 import '../pages/homePages/text.dart';
