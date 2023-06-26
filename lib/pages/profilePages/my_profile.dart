@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
+import 'package:social_media_campus_app/widgets/profile/analytics_count.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -32,7 +33,7 @@ class ProfilePage extends StatelessWidget {
                     children: [
                       //Name heading
                       Padding(
-                        padding: const EdgeInsets.only(top: 200.0, left: 60),
+                        padding: const EdgeInsets.only(top: 220.0, left: 60),
                         child: Column(
                           children: [
                             Text(
@@ -93,6 +94,37 @@ class ProfilePage extends StatelessWidget {
                     fontSize: 16,
                   ),
                 ),
+              ),
+
+              const SizedBox(height: 16),
+              const Divider(height: .4, color: Colors.black),
+              const SizedBox(height: 16),
+
+              //Analytics bar
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  AnalyticsCount(count: 24148, metric: "Followers"),
+                  AnalyticsCount(count: 123, metric: "Following"),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle button press
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                    ),
+                    child: Text(
+                      'Edit Profile',
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                  )
+                ],
               ),
             ],
           ),
