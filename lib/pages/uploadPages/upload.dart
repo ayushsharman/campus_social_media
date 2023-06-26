@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../constant/appColos.dart';
 
 class UploadPage extends StatelessWidget {
   @override
@@ -45,7 +48,7 @@ class UploadPage extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,28 +68,15 @@ class UploadPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16.0),
-            ElevatedButton.icon(
-              onPressed: () {
-                // Handle add action
-              },
-              icon: const Icon(Icons.add),
-              label: const Text("Add"),
-            ),
-            const SizedBox(height: 16.0),
             // Empty space for user input
-            Container(
-              height: 200.0, // Adjust the height as needed
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Center(
-                child: Text(
-                  "Type your content here",
-                  style: GoogleFonts.poppins(
-                    color: Colors.grey,
-                    fontSize: 16.0,
-                  ),
+            Center(
+              child: TextField(
+                decoration: const InputDecoration(
+                  hintText: "Type your content here",
+                ),
+                style: GoogleFonts.poppins(
+                  color: Colors.grey,
+                  fontSize: 16.0,
                 ),
               ),
             ),
@@ -96,7 +86,10 @@ class UploadPage extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Colors.blue, Colors.green],
+                  colors: [
+                    Colors.blue,
+                    Colors.green,
+                  ],
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                 ),
@@ -105,8 +98,28 @@ class UploadPage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
+                    SpeedDial(
+                        buttonSize: const Size(40, 40),
+                        overlayColor: Colors.black,
+                        backgroundColor: AppColor.blue,
+                        activeChild: const Icon(Icons.close),
+                        children: [
+                          SpeedDialChild(
+                            child: const Icon(Iconsax.activity),
+                            onTap: () {},
+                          ),
+                          SpeedDialChild(
+                            child: const Icon(Iconsax.activity),
+                            onTap: () {},
+                          ),
+                          SpeedDialChild(
+                            child: const Icon(Iconsax.activity),
+                            onTap: () {},
+                          ),
+                        ],
+                        child: const Icon(Iconsax.add)),
                     Text(
                       "Post",
                       style: GoogleFonts.poppins(
