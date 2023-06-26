@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
+import 'package:social_media_campus_app/pages/homePages/home.dart';
 import 'package:social_media_campus_app/widgets/chat/circle_chat.dart';
 import 'package:social_media_campus_app/widgets/chat/message_tray.dart';
 
@@ -23,7 +24,8 @@ class ChatPage extends StatelessWidget {
               size: 30,
             ),
             onPressed: () {
-              // Handle back button press
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomePage()));
             },
           ),
         ),

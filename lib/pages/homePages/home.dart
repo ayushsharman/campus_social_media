@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
+import 'package:social_media_campus_app/pages/homePages/notifications.dart';
+import 'package:social_media_campus_app/pages/homePages/search.dart';
 import 'package:social_media_campus_app/widgets/home/posts/imagePost.dart';
 import 'package:social_media_campus_app/widgets/home/posts/textPost.dart';
 import 'package:social_media_campus_app/widgets/home/stories/stories.dart';
@@ -40,7 +42,10 @@ class HomePage extends StatelessWidget {
               color: Colors.black,
             ),
             onPressed: () {
-              // Add your search icon button action here
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchPage()),
+              );
             },
           ),
           IconButton(
@@ -49,7 +54,11 @@ class HomePage extends StatelessWidget {
               color: Colors.black,
             ),
             onPressed: () {
-              // Add your notification icon button action here
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const NotificationsPage()),
+              );
             },
           ),
         ],
