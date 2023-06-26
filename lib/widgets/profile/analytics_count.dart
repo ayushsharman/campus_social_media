@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:social_media_campus_app/constant/appColos.dart';
 
+// ignore: must_be_immutable
 class AnalyticsCount extends StatelessWidget {
   int count;
   String metric;

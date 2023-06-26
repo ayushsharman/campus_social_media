@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../constant/appColos.dart';
 
+// ignore: must_be_immutable
 class PersonalMessage extends StatelessWidget {
   String name;
   String? image;
