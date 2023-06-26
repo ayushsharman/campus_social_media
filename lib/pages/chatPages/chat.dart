@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
-import 'package:social_media_campus_app/pages/homePages/home.dart';
 import 'package:social_media_campus_app/widgets/chat/circle_chat.dart';
 import 'package:social_media_campus_app/widgets/chat/message_tray.dart';
+
+import '../../navigation/navBar.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class ChatPage extends StatelessWidget {
             ),
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage()));
+                  MaterialPageRoute(builder: (context) => const BottomNav()));
             },
           ),
         ),

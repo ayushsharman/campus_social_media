@@ -2,7 +2,6 @@ import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:social_media_campus_app/constant/appColos.dart';
 
 import '../../widgets/home/posts/imagePost.dart';
 import '../../widgets/home/posts/textPost.dart';
@@ -20,18 +19,16 @@ class SearchPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //Search Tray
-              Container(
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold),
-                    hintText: 'Search for people, posts, and text',
-                    suffixIcon: const Icon(Iconsax.search_normal),
-                    filled: true,
-                    fillColor: Colors.grey[300],
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(35.0),
-                      borderSide: BorderSide.none,
-                    ),
+              TextField(
+                decoration: InputDecoration(
+                  hintStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                  hintText: 'Search for people, posts, and text',
+                  suffixIcon: const Icon(Iconsax.search_normal),
+                  filled: true,
+                  fillColor: Colors.grey[300],
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(35.0),
+                    borderSide: BorderSide.none,
                   ),
                 ),
               ),
