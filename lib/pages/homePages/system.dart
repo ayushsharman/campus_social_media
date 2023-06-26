@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
+import 'package:social_media_campus_app/pages/homePages/search.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 import '../../widgets/home/posts/imagePost.dart';
+import '../profilePages/my_profile.dart';
+import 'notifications.dart';
 
 class SystemPage extends StatefulWidget {
   const SystemPage({Key? key}) : super(key: key);
@@ -50,7 +53,10 @@ class _TextPageState extends State<SystemPage>
             color: Colors.black,
           ),
           onPressed: () {
-            // Add your profile icon button action here
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProfilePage()),
+            );
           },
         ),
         actions: [
@@ -60,7 +66,10 @@ class _TextPageState extends State<SystemPage>
               color: Colors.black,
             ),
             onPressed: () {
-              // Add your search icon button action here
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchPage()),
+              );
             },
           ),
           IconButton(
@@ -69,7 +78,11 @@ class _TextPageState extends State<SystemPage>
               color: Colors.black,
             ),
             onPressed: () {
-              // Add your notification icon button action here
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const NotificationsPage()),
+              );
             },
           ),
         ],
