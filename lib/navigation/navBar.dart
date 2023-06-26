@@ -6,7 +6,7 @@ import '../pages/chatPages/chat.dart';
 import '../pages/homePages/home.dart';
 import '../pages/homePages/system.dart';
 import '../pages/homePages/text.dart';
-import '../pages/upload.dart';
+import '../pages/uploadPages/upload.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -29,12 +29,12 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       body: IndexedStack(
         index: currentIndex,
-        children: const [
-          SystemPage(),
-          HomePage(),
+        children:  [
+          const SystemPage(),
+          const HomePage(),
           UploadPage(),
-          ChatPage(),
-          TextPage(),
+          const ChatPage(),
+          const TextPage(),
         ],
       ),
       bottomNavigationBar: Container(
