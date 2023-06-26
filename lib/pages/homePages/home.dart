@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
 import 'package:social_media_campus_app/pages/homePages/notifications.dart';
 import 'package:social_media_campus_app/pages/homePages/search.dart';
+import 'package:social_media_campus_app/pages/profilePages/my_profile.dart';
 import 'package:social_media_campus_app/widgets/home/posts/imagePost.dart';
 import 'package:social_media_campus_app/widgets/home/posts/textPost.dart';
 import 'package:social_media_campus_app/widgets/home/stories/stories.dart';
@@ -32,7 +33,10 @@ class HomePage extends StatelessWidget {
             color: Colors.black,
           ),
           onPressed: () {
-            // Add your profile icon button action here
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfilePage()),
+            );
           },
         ),
         actions: [
