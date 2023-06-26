@@ -3,8 +3,31 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
 import 'package:social_media_campus_app/widgets/profile/analytics_count.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+import '../../widgets/home/posts/imagePost.dart';
+import '../../widgets/home/posts/textPost.dart';
+
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
+
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +40,7 @@ class ProfilePage extends StatelessWidget {
               Stack(
                 alignment: Alignment.topRight,
                 children: [
-                  //Banner
+                  // Banner
                   Container(
                     height: 200,
                     decoration: const BoxDecoration(
@@ -31,7 +54,7 @@ class ProfilePage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      //Name heading
+                      // Name heading
                       Padding(
                         padding: const EdgeInsets.only(top: 220.0, left: 60),
                         child: Column(
@@ -54,7 +77,7 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ),
 
-                      //Profile Picture
+                      // Profile Picture
                       Padding(
                         padding: const EdgeInsets.only(top: 150.0, right: 8),
                         child: Container(
@@ -84,7 +107,7 @@ class ProfilePage extends StatelessWidget {
 
               const SizedBox(height: 15),
 
-              //Bio
+              // Bio
               Center(
                 child: Text(
                   "Coder by Profession. Artist by Passion!",
@@ -100,7 +123,7 @@ class ProfilePage extends StatelessWidget {
               const Divider(height: .4, color: Colors.black),
               const SizedBox(height: 16),
 
-              //Analytics bar
+              // Analytics bar
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -125,6 +148,81 @@ class ProfilePage extends StatelessWidget {
                     ),
                   )
                 ],
+              ),
+
+              const SizedBox(height: 16),
+
+              // Tab Bar
+              TabBar(
+                labelColor: Colors.black,
+                indicatorWeight: 3,
+                labelStyle: GoogleFonts.poppins(
+                    fontWeight: FontWeight.bold, fontSize: 18),
+                controller: _tabController,
+                indicatorColor: AppColor.blue,
+                tabs: const [
+                  Tab(text: 'Posts'),
+                  Tab(text: 'Text'),
+                  Tab(text: 'Story'),
+                ],
+              ),
+
+              // Tab Bar View
+              SizedBox(
+                height: 400, // Adjust the height as needed
+                child: TabBarView(
+                  controller: _tabController,
+                  children: const [
+                    //Posts/System section
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          ImagePostCard(
+                            post: "assets/post.png",
+                            image: "assets/Profile Photo (1).png",
+                          ),
+                          ImagePostCard(
+                            post: "assets/post.png",
+                            image: "assets/Profile Photo (2).png",
+                          ),
+                          ImagePostCard(
+                            post: "assets/post.png",
+                            image: "assets/Profile Photo.png",
+                          ),
+                          ImagePostCard(
+                            post: "assets/post.png",
+                            image: "assets/Profile Photo (1).png",
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //Text Section
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          TextPostCard(
+                            image: 'assets/Profile Photo (1).png',
+                          ),
+                          TextPostCard(
+                            image: 'assets/Profile Photo.png',
+                          ),
+                          TextPostCard(
+                            image: 'assets/Profile Photo (2).png',
+                          ),
+                          TextPostCard(
+                            image: 'assets/Profile Photo.png',
+                          ),
+                          TextPostCard(
+                            image: 'assets/Profile Photo.png',
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Center(child: Text('Hello')),
+                  ],
+                ),
               ),
             ],
           ),
