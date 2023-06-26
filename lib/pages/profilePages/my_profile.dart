@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -16,7 +18,7 @@ class ProfilePage extends StatelessWidget {
                   height: 200, // Adjust the height as needed
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/Profile Banner.png'),
+                      image: AssetImage('assets/Profile Banner.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),
