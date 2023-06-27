@@ -5,8 +5,8 @@ import 'package:social_media_campus_app/constant/appColos.dart';
 import 'package:social_media_campus_app/pages/homePages/notifications.dart';
 import 'package:social_media_campus_app/pages/homePages/search.dart';
 import 'package:social_media_campus_app/pages/profilePages/my_profile.dart';
+import 'package:social_media_campus_app/widgets/home/custom_appbar.dart';
 import 'package:social_media_campus_app/widgets/home/posts/imagePost.dart';
-import 'package:social_media_campus_app/widgets/home/posts/textPost.dart';
 import 'package:social_media_campus_app/widgets/home/stories/stories.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,66 +15,23 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Center(
-          child: Text(
-            'Feeleeria',
-            style: GoogleFonts.sail(
-              fontSize: 40,
-              color: AppColor.orange,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        leading: IconButton(
-          icon: const Icon(
-            Iconsax.profile_circle,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()),
-            );
-          },
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Iconsax.search_favorite,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SearchPage()),
-              );
-            },
-          ),
-          IconButton(
-            icon: const Icon(
-              Iconsax.notification,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const NotificationsPage()),
-              );
-            },
-          ),
-        ],
-      ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(
+              height: 10,
+            ),
+
+            //Custom App Bar
+            CustomAppBar(
+              name: "Feeleeria",
+            ),
+
             //Story section
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 10.0),
               child: StoryIcon(
                 images: [
@@ -84,17 +41,17 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(
+            const Divider(
               height: 1,
               color: Colors.grey,
             ),
 
             //Post section
-            ImagePostCard(
+            const ImagePostCard(
               post: "assets/post.png",
               image: "assets/Profile Photo (1).png",
             ),
-            ImagePostCard(
+            const ImagePostCard(
               post: "assets/post.png",
               image: "assets/Profile Photo.png",
             ),
