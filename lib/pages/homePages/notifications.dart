@@ -54,7 +54,7 @@ class NotificationsPage extends StatelessWidget {
               ),
             ),
 
-            //Notifications Cards
+            //Notification Cards
             const NotificationCard(
               icon: Icons.favorite,
               heading: 'Sofia, John and 5 others liked your post',
