@@ -83,29 +83,6 @@ class CustomAppBar extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 20),
-        const Padding(
-          padding: EdgeInsets.only(left: 10.0),
-          child: StoryIcon(
-            images: [
-              'assets/Profile Photo.png',
-              'assets/Profile Photo (1).png',
-              'assets/Profile Photo (2).png',
-            ],
-          ),
-        ),
-        const Divider(
-          height: 1,
-          color: Colors.grey,
-        ),
-        const ImagePostCard(
-          post: "assets/post.png",
-          image: "assets/Profile Photo (1).png",
-        ),
-        const ImagePostCard(
-          post: "assets/post.png",
-          image: "assets/Profile Photo.png",
-        ),
       ],
     );
   }

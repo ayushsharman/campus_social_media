@@ -55,6 +55,10 @@ class HomePage extends StatelessWidget {
               post: "assets/post.png",
               image: "assets/Profile Photo.png",
             ),
+            const ImagePostCard(
+              post: "assets/post.png",
+              image: "assets/Profile Photo.png",
+            ),
           ],
         ),
       ),
