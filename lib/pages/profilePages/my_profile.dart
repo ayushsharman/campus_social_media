@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
 import 'package:social_media_campus_app/widgets/profile/analytics_count.dart';
 
@@ -37,7 +38,6 @@ class _ProfilePageState extends State<ProfilePage>
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Stack(
-              alignment: Alignment.topRight,
               children: [
                 // Banner
                 Container(
@@ -47,6 +47,14 @@ class _ProfilePageState extends State<ProfilePage>
                       image: AssetImage('assets/Profile Banner.jpg'),
                       fit: BoxFit.cover,
                     ),
+                  ),
+                ),
+
+                const Padding(
+                  padding: EdgeInsets.all(30.0),
+                  child: Icon(
+                    Iconsax.save_2,
+                    size: 40,
                   ),
                 ),
 
@@ -135,7 +143,7 @@ class _ProfilePageState extends State<ProfilePage>
                     // Handle button press
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: AppColor.orange,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     ),
