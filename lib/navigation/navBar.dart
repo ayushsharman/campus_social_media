@@ -29,7 +29,7 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       body: IndexedStack(
         index: currentIndex,
-        children:  [
+        children: [
           const SystemPage(),
           const HomePage(),
           UploadPage(),
@@ -38,7 +38,7 @@ class _BottomNavState extends State<BottomNav> {
         ],
       ),
       bottomNavigationBar: Container(
-        height: 88,
+        height: 55,
         decoration: const BoxDecoration(
           color: AppColor.blue,
           boxShadow: [
