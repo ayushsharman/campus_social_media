@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:social_media_campus_app/constant/appColos.dart';
-import 'package:social_media_campus_app/widgets/chat/circle_chat.dart';
-import 'package:social_media_campus_app/widgets/chat/message_tray.dart';
 
+import '../../constant/appColos.dart';
 import '../../navigation/navBar.dart';
+import '../../widgets/chat/circle_chat.dart';
+import '../../widgets/chat/message_tray.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);

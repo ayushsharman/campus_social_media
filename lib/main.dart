@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:social_media_campus_app/navigation/navBar.dart';
+
+import 'navigation/navBar.dart';
 
 // import 'auth/login.dart';
 

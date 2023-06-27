@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:social_media_campus_app/widgets/home/custom_appbar.dart';
+
+import '../../widgets/home/custom_appbar.dart';
 
 class SystemPage extends StatelessWidget {
   const SystemPage({Key? key}) : super(key: key);

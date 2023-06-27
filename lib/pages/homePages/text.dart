@@ -1,9 +1,12 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:social_media_campus_app/constant/appColos.dart';
-import 'package:social_media_campus_app/widgets/home/custom_appbar.dart';
-import 'package:social_media_campus_app/widgets/home/posts/textPost.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
+
+import '../../constant/appColos.dart';
+import '../../widgets/home/custom_appbar.dart';
+import '../../widgets/home/posts/textPost.dart';
 
 class TextPage extends StatefulWidget {
   const TextPage({Key? key}) : super(key: key);

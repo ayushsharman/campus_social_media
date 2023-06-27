@@ -2,11 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:social_media_campus_app/constant/appColos.dart';
-import 'package:social_media_campus_app/widgets/profile/analytics_count.dart';
-
+import '../../constant/appColos.dart';
 import '../../widgets/home/posts/imagePost.dart';
 import '../../widgets/home/posts/textPost.dart';
+import '../../widgets/profile/analytics_count.dart';
 
 // ignore: must_be_immutable
 class ViewProfilePage extends StatefulWidget {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:social_media_campus_app/widgets/home/custom_appbar.dart';
-import 'package:social_media_campus_app/widgets/home/posts/imagePost.dart';
-import 'package:social_media_campus_app/widgets/home/stories/stories.dart';
+
+import '../../widgets/home/custom_appbar.dart';
+import '../../widgets/home/posts/imagePost.dart';
+import '../../widgets/home/stories/stories.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

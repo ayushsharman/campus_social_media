@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:social_media_campus_app/constant/appColos.dart';
+
+import '../../constant/appColos.dart';
 
 // ignore: must_be_immutable
 class MessageTray extends StatelessWidget {
