@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
-import 'package:social_media_campus_app/pages/homePages/search.dart';
+import 'package:social_media_campus_app/widgets/home/custom_appbar.dart';
 import 'package:social_media_campus_app/widgets/home/posts/textPost.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
-
-import '../profilePages/my_profile.dart';
-import 'notifications.dart';
 
 class TextPage extends StatefulWidget {
   const TextPage({Key? key}) : super(key: key);
@@ -35,60 +31,12 @@ class _TextPageState extends State<TextPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Center(
-          child: Text(
-            'Text',
-            style: GoogleFonts.sail(
-              fontSize: 40,
-              color: AppColor.orange,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        leading: IconButton(
-          icon: const Icon(
-            Iconsax.profile_circle,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()),
-            );
-          },
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Iconsax.search_favorite,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SearchPage()),
-              );
-            },
-          ),
-          IconButton(
-            icon: const Icon(
-              Iconsax.notification,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const NotificationsPage()),
-              );
-            },
-          ),
-        ],
-      ),
       body: Column(
         children: [
+          const SizedBox(
+            height: 12,
+          ),
+          CustomAppBar(name: "Text"),
           const SizedBox(
             height: 10,
           ),

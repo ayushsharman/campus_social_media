@@ -1,10 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:social_media_campus_app/constant/appColos.dart';
-import 'package:social_media_campus_app/pages/homePages/notifications.dart';
-import 'package:social_media_campus_app/pages/homePages/search.dart';
-import 'package:social_media_campus_app/pages/profilePages/my_profile.dart';
 import 'package:social_media_campus_app/widgets/home/custom_appbar.dart';
 import 'package:social_media_campus_app/widgets/home/posts/imagePost.dart';
 import 'package:social_media_campus_app/widgets/home/stories/stories.dart';
@@ -19,7 +13,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(
-              height: 10,
+              height: 12,
             ),
 
             //Custom App Bar

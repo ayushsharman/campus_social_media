@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/constant/appColos.dart';
 import 'package:social_media_campus_app/pages/homePages/search.dart';
+import 'package:social_media_campus_app/widgets/home/custom_appbar.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 import '../../widgets/home/posts/imagePost.dart';
@@ -35,60 +36,12 @@ class _TextPageState extends State<SystemPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Center(
-          child: Text(
-            'System',
-            style: GoogleFonts.sail(
-              fontSize: 40,
-              color: AppColor.orange,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        leading: IconButton(
-          icon: const Icon(
-            Iconsax.profile_circle,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()),
-            );
-          },
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Iconsax.search_favorite,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SearchPage()),
-              );
-            },
-          ),
-          IconButton(
-            icon: const Icon(
-              Iconsax.notification,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const NotificationsPage()),
-              );
-            },
-          ),
-        ],
-      ),
       body: Column(
         children: [
+          const SizedBox(
+            height: 12,
+          ),
+          CustomAppBar(name: 'System'),
           const SizedBox(
             height: 10,
           ),
