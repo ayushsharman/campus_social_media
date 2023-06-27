@@ -32,100 +32,104 @@ class _TextPageState extends State<SystemPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 12,
-          ),
-          CustomAppBar(name: 'System'),
-          const SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Material(
-              elevation: 5,
-              shadowColor: Colors.black,
-              borderRadius: BorderRadius.circular(25),
-              child: TabBar(
-                labelColor: Colors.white,
-                unselectedLabelColor: Colors.black,
-                controller: _tabController,
-                indicatorColor: AppColor.orange,
-                labelStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold),
-                tabs: const [
-                  Tab(
-                    text: 'Trending',
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 12,
+            ),
+            CustomAppBar(name: 'System'),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Material(
+                elevation: 5,
+                shadowColor: Colors.black,
+                borderRadius: BorderRadius.circular(25),
+                child: TabBar(
+                  labelColor: Colors.white,
+                  unselectedLabelColor: Colors.black,
+                  controller: _tabController,
+                  indicatorColor: AppColor.orange,
+                  labelStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+                  tabs: const [
+                    Tab(
+                      text: 'Trending',
+                    ),
+                    Tab(
+                      text: 'Latest',
+                    ),
+                  ],
+                  indicator: RectangularIndicator(
+                    color: AppColor.blue,
+                    paintingStyle: PaintingStyle.fill,
+                    topLeftRadius: 25,
+                    topRightRadius: 25,
+                    bottomLeftRadius: 25,
+                    bottomRightRadius: 25,
                   ),
-                  Tab(
-                    text: 'Latest',
-                  ),
-                ],
-                indicator: RectangularIndicator(
-                  color: AppColor.blue,
-                  paintingStyle: PaintingStyle.fill,
-                  topLeftRadius: 25,
-                  topRightRadius: 25,
-                  bottomLeftRadius: 25,
-                  bottomRightRadius: 25,
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: TabBarView(
-              controller: _tabController,
-              children: const [
-                SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      // Trending Content (ImagePostCard)
-                      ImagePostCard(
-                        post: "assets/post.png",
-                        image: "assets/Profile Photo (1).png",
-                      ),
-                      ImagePostCard(
-                        post: "assets/post.png",
-                        image: "assets/Profile Photo (2).png",
-                      ),
-                      ImagePostCard(
-                        post: "assets/post.png",
-                        image: "assets/Profile Photo.png",
-                      ),
-                      ImagePostCard(
-                        post: "assets/post.png",
-                        image: "assets/Profile Photo (1).png",
-                      ),
-                    ],
+            SizedBox(
+              height: MediaQuery.of(context).size.height -
+                  200, // Adjust the height as needed
+              child: TabBarView(
+                controller: _tabController,
+                children: const [
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        // Trending Content (ImagePostCard)
+                        ImagePostCard(
+                          post: "assets/post.png",
+                          image: "assets/Profile Photo (1).png",
+                        ),
+                        ImagePostCard(
+                          post: "assets/post.png",
+                          image: "assets/Profile Photo (2).png",
+                        ),
+                        ImagePostCard(
+                          post: "assets/post.png",
+                          image: "assets/Profile Photo.png",
+                        ),
+                        ImagePostCard(
+                          post: "assets/post.png",
+                          image: "assets/Profile Photo (1).png",
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      // Latest Content (ImagePostCard)
-                      ImagePostCard(
-                        post: "assets/post.png",
-                        image: "assets/Profile Photo.png",
-                      ),
-                      ImagePostCard(
-                        post: "assets/post.png",
-                        image: "assets/Profile Photo (2).png",
-                      ),
-                      ImagePostCard(
-                        post: "assets/post.png",
-                        image: "assets/Profile Photo.png",
-                      ),
-                      ImagePostCard(
-                        post: "assets/post.png",
-                        image: "assets/Profile Photo (1).png",
-                      ),
-                    ],
+                  SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        // Latest Content (ImagePostCard)
+                        ImagePostCard(
+                          post: "assets/post.png",
+                          image: "assets/Profile Photo.png",
+                        ),
+                        ImagePostCard(
+                          post: "assets/post.png",
+                          image: "assets/Profile Photo (2).png",
+                        ),
+                        ImagePostCard(
+                          post: "assets/post.png",
+                          image: "assets/Profile Photo.png",
+                        ),
+                        ImagePostCard(
+                          post: "assets/post.png",
+                          image: "assets/Profile Photo (1).png",
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
