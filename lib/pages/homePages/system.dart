@@ -1,33 +1,12 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:social_media_campus_app/constant/appColos.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:social_media_campus_app/widgets/home/custom_appbar.dart';
-import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
-import '../../widgets/home/posts/imagePost.dart';
-
-class SystemPage extends StatefulWidget {
+class SystemPage extends StatelessWidget {
   const SystemPage({Key? key}) : super(key: key);
-
-  @override
-  _TextPageState createState() => _TextPageState();
-}
-
-class _TextPageState extends State<SystemPage>
-    with SingleTickerProviderStateMixin {
-  late TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 2, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,96 +17,35 @@ class _TextPageState extends State<SystemPage>
             const SizedBox(
               height: 12,
             ),
-            CustomAppBar(name: 'System'),
+
+            //CustomAppBar
+            CustomAppBar(
+              name: 'System',
+              isSystem: true,
+            ),
             const SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Material(
-                elevation: 5,
-                shadowColor: Colors.black,
-                borderRadius: BorderRadius.circular(25),
-                child: TabBar(
-                  labelColor: Colors.white,
-                  unselectedLabelColor: Colors.black,
-                  controller: _tabController,
-                  indicatorColor: AppColor.orange,
-                  labelStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold),
-                  tabs: const [
-                    Tab(
-                      text: 'Trending',
-                    ),
-                    Tab(
-                      text: 'Latest',
-                    ),
-                  ],
-                  indicator: RectangularIndicator(
-                    color: AppColor.blue,
-                    paintingStyle: PaintingStyle.fill,
-                    topLeftRadius: 25,
-                    topRightRadius: 25,
-                    bottomLeftRadius: 25,
-                    bottomRightRadius: 25,
+
+            //No data
+            Column(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 160.0),
+                  child: Icon(
+                    Iconsax.warning_24,
+                    size: 160,
                   ),
                 ),
-              ),
+                Text(
+                  "No Data Found",
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.bold, fontSize: 40),
+                )
+              ],
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height -
-                  200, // Adjust the height as needed
-              child: TabBarView(
-                controller: _tabController,
-                children: const [
-                  SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        // Trending Content (ImagePostCard)
-                        ImagePostCard(
-                          post: "assets/post.png",
-                          image: "assets/Profile Photo (1).png",
-                        ),
-                        ImagePostCard(
-                          post: "assets/post.png",
-                          image: "assets/Profile Photo (2).png",
-                        ),
-                        ImagePostCard(
-                          post: "assets/post.png",
-                          image: "assets/Profile Photo.png",
-                        ),
-                        ImagePostCard(
-                          post: "assets/post.png",
-                          image: "assets/Profile Photo (1).png",
-                        ),
-                      ],
-                    ),
-                  ),
-                  SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        // Latest Content (ImagePostCard)
-                        ImagePostCard(
-                          post: "assets/post.png",
-                          image: "assets/Profile Photo.png",
-                        ),
-                        ImagePostCard(
-                          post: "assets/post.png",
-                          image: "assets/Profile Photo (2).png",
-                        ),
-                        ImagePostCard(
-                          post: "assets/post.png",
-                          image: "assets/Profile Photo.png",
-                        ),
-                        ImagePostCard(
-                          post: "assets/post.png",
-                          image: "assets/Profile Photo (1).png",
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
+            //Posts when data
           ],
         ),
       ),
