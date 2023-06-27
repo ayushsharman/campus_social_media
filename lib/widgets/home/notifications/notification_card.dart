@@ -35,7 +35,7 @@ class NotificationCard extends StatelessWidget {
           subheading,
           style: GoogleFonts.poppins(
             fontSize: 13,
-            color: Colors.blue,
+            color: AppColor.blue,
           ),
         ),
       ),

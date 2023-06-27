@@ -9,89 +9,89 @@ class NotificationsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //Top Row
-              Container(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Alerts',
-                      style: GoogleFonts.poppins(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 20),
+
+            //Top Row
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Alerts',
+                    style: GoogleFonts.poppins(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
                     ),
-                    Text(
-                      'Mark all as read',
-                      style: GoogleFonts.poppins(
-                        letterSpacing: .2,
-                        fontSize: 24,
-                        color: AppColor.orange,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  ),
+                  Text(
+                    'Mark all as read',
+                    style: GoogleFonts.poppins(
+                      letterSpacing: .2,
+                      fontSize: 24,
+                      color: AppColor.orange,
+                      fontWeight: FontWeight.bold,
                     ),
-                  ],
-                ),
-              ),
-
-              //Timeline
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0, top: 8.0),
-                child: Text(
-                  'TODAY',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    color: AppColor.blue,
                   ),
+                ],
+              ),
+            ),
+
+            //Timeline
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0, top: 8.0),
+              child: Text(
+                'TODAY',
+                style: GoogleFonts.poppins(
+                  fontSize: 16,
+                  color: AppColor.blue,
                 ),
               ),
+            ),
 
-              //Notifications Cards
-              const NotificationCard(
-                icon: Icons.favorite,
-                heading: 'Sofia, John and 5 others liked your post',
-                subheading: '10m ago',
-                isSeen: false,
-              ),
-              const NotificationCard(
-                icon: Icons.favorite,
-                heading: 'Rebecca, Lisa and 1 others liked your post',
-                subheading: '20m ago',
-                isSeen: false,
-              ),
+            //Notifications Cards
+            const NotificationCard(
+              icon: Icons.favorite,
+              heading: 'Sofia, John and 5 others liked your post',
+              subheading: '10m ago',
+              isSeen: false,
+            ),
+            const NotificationCard(
+              icon: Icons.favorite,
+              heading: 'Rebecca, Lisa and 1 others liked your post',
+              subheading: '20m ago',
+              isSeen: false,
+            ),
 
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0, top: 20.0),
-                child: Text(
-                  'YESTERDAY',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    color: AppColor.blue,
-                  ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0, top: 20.0),
+              child: Text(
+                'YESTERDAY',
+                style: GoogleFonts.poppins(
+                  fontSize: 16,
+                  color: AppColor.blue,
                 ),
               ),
+            ),
 
-              const NotificationCard(
-                icon: Icons.favorite,
-                heading: 'Ralph followed you',
-                subheading: '1 day ago',
-                isSeen: true,
-              ),
-              const NotificationCard(
-                icon: Icons.favorite,
-                heading: 'Katrina Commented on your post',
-                subheading: '1 day ago',
-                isSeen: true,
-              ),
-            ],
-          ),
+            const NotificationCard(
+              icon: Icons.favorite,
+              heading: 'Ralph followed you',
+              subheading: '1 day ago',
+              isSeen: true,
+            ),
+            const NotificationCard(
+              icon: Icons.favorite,
+              heading: 'Katrina Commented on your post',
+              subheading: '1 day ago',
+              isSeen: true,
+            ),
+          ],
         ),
       ),
     );
