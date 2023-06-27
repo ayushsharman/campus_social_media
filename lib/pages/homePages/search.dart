@@ -2,6 +2,7 @@ import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:social_media_campus_app/constant/appColos.dart';
 
 import '../../widgets/home/posts/imagePost.dart';
 import '../../widgets/home/posts/textPost.dart';
@@ -55,6 +56,7 @@ class SearchPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     ButtonsTabBar(
+                      backgroundColor: AppColor.blue,
                       duration: 100,
                       height: 50,
                       contentPadding: const EdgeInsets.all(10),
