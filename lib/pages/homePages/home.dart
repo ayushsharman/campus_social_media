@@ -90,13 +90,14 @@ class HomePage extends StatelessWidget {
             ),
 
             //Post section
-            TextPostCard(
-              image: 'assets/Profile Photo.png',
-            ),
             ImagePostCard(
               post: "assets/post.png",
               image: "assets/Profile Photo (1).png",
-            )
+            ),
+            ImagePostCard(
+              post: "assets/post.png",
+              image: "assets/Profile Photo.png",
+            ),
           ],
         ),
       ),
