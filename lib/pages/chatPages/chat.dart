@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../constant/appColos.dart';
+import '../../constant/app_colos.dart';
 import '../../navigation/navBar.dart';
 import '../../widgets/chat/circle_chat.dart';
 import '../../widgets/chat/message_tray.dart';

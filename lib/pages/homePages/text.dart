@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
-import '../../constant/appColos.dart';
+import '../../constant/app_colos.dart';
 import '../../widgets/home/custom_appbar.dart';
 import '../../widgets/home/posts/textPost.dart';
 

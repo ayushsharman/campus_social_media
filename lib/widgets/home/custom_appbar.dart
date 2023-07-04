@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../constant/appColos.dart';
+import '../../constant/app_colos.dart';
 import '../../pages/homePages/notifications.dart';
 import '../../pages/homePages/search.dart';
 import '../../pages/profilePages/my_profile.dart';

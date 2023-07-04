@@ -3,7 +3,7 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../constant/appColos.dart';
+import '../../constant/app_colos.dart';
 
 class UploadPage extends StatelessWidget {
   @override

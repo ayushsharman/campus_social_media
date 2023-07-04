@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../constant/appColos.dart';
+import '../../constant/app_colos.dart';
 import '../../widgets/home/notifications/notification_card.dart';
 
 class NotificationsPage extends StatelessWidget {

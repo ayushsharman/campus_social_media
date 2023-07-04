@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../constant/appColos.dart';
+import '../../constant/app_colos.dart';
 import '../../widgets/home/posts/imagePost.dart';
 import '../../widgets/home/posts/textPost.dart';
 import '../../widgets/profile/analytics_count.dart';

@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../constant/appColos.dart';
+import '../../constant/app_colos.dart';
 
-class CustomButton extends StatefulWidget {
+class CustomButton extends StatelessWidget {
   const CustomButton({super.key});
 
-  @override
-  State<CustomButton> createState() => _CustomButtonState();
-}
-
-class _CustomButtonState extends State<CustomButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

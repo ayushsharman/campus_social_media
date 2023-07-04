@@ -1,9 +1,10 @@
 import 'package:Feeleeria/widgets/auth/button.dart';
+import 'package:Feeleeria/widgets/auth/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../constant/appColos.dart';
+import '../constant/app_colos.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -42,15 +43,8 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Email',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
+              CustomTextField(
+                name: "Email",
               ),
               const SizedBox(height: 10),
               TextFormField(

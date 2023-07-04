@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../constant/appColos.dart';
+import '../../constant/app_colos.dart';
 
 // ignore: must_be_immutable
 class AnalyticsCount extends StatelessWidget {

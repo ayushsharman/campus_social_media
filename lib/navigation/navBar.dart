@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../constant/appColos.dart';
+import '../constant/app_colos.dart';
 import '../pages/chatPages/chat.dart';
 import '../pages/homePages/home.dart';
 import '../pages/homePages/system.dart';
