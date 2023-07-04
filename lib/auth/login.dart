@@ -1,3 +1,4 @@
+import 'package:Feeleeria/widgets/auth/button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
@@ -15,23 +16,32 @@ class LoginPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+              const SizedBox(height: 60),
+              const Icon(
                 Iconsax.login, // Add the login icon from iconsax
-                size: 80,
+                size: 120,
                 color: Colors.white,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 10),
               Text(
                 'Login',
                 style: GoogleFonts.poppins(
-                  fontSize: 30, // Increase the size of the login text
+                  fontSize: 60, // Increase the size of the login text
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
+              const Text(
+                'A place to find your mate on campus!',
+                style: TextStyle(
+                  fontSize: 20, // Increase the size of the login text
+                  color: Colors.white,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              const SizedBox(height: 20),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Email',
@@ -42,7 +52,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Password',
@@ -53,32 +63,14 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Perform login action
-                },
-                child: Text('Login'),
-                style: ElevatedButton.styleFrom(
-                  primary:
-                      AppColor.orange, // Use the orange color from the theme
-                  onPrimary: Colors.white,
-                  textStyle: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-              ),
-              SizedBox(height: 10),
+              const SizedBox(height: 30),
+              const CustomButton(),
+              const SizedBox(height: 30),
               GestureDetector(
                 onTap: () {
                   // Perform register action
                 },
-                child: Text(
+                child: const Text(
                   "Don't have an account? Register",
                   style: TextStyle(
                     color: Colors.white,
