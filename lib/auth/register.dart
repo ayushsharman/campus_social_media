@@ -1,4 +1,4 @@
-import 'package:Feeleeria/auth/register.dart';
+import 'package:Feeleeria/auth/login.dart';
 import 'package:Feeleeria/widgets/auth/button.dart';
 import 'package:Feeleeria/widgets/auth/text_field.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +7,8 @@ import 'package:iconsax/iconsax.dart';
 
 import '../constant/app_colos.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,39 +21,43 @@ class LoginPage extends StatelessWidget {
             children: [
               const SizedBox(height: 60),
               const Icon(
-                Iconsax.login, // Add the login icon from iconsax
+                Iconsax.user, // Add the register icon from iconsax
                 size: 120,
                 color: Colors.white,
               ),
               const SizedBox(height: 10),
               Text(
-                'Login',
+                'Register',
                 style: GoogleFonts.poppins(
-                  fontSize: 60, // Increase the size of the login text
+                  fontSize: 60, // Increase the size of the register text
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
               const SizedBox(height: 10),
               const Text(
-                'A place to find your mate on campus!',
+                'Create your account to get started!',
                 style: TextStyle(
-                  fontSize: 20, // Increase the size of the login text
+                  fontSize: 20,
                   color: Colors.white,
                   fontStyle: FontStyle.italic,
                 ),
               ),
               const SizedBox(height: 20),
               CustomTextField(
-                name: "Email",
+                name: "Name", // Replace with appropriate field name
               ),
               const SizedBox(height: 10),
               CustomTextField(
-                name: 'Password',
+                name: 'Email', // Replace with appropriate field name
+              ),
+              const SizedBox(height: 10),
+              CustomTextField(
+                name: 'Password', // Replace with appropriate field name
               ),
               const SizedBox(height: 30),
               CustomButton(
-                text: 'Login',
+                text: 'Register', // Replace with appropriate button text
               ),
               const SizedBox(height: 30),
               GestureDetector(
@@ -61,12 +65,12 @@ class LoginPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const RegisterPage(),
+                      builder: (context) => const LoginPage(),
                     ),
                   );
                 },
                 child: const Text(
-                  "Don't have an account? Register",
+                  "Already have an account? Login",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,

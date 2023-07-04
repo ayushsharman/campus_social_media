@@ -1,9 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
 
 import '../../constant/app_colos.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  String text;
+  CustomButton({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +28,7 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
       ),
-      child: const Text('Login'),
+      child: Text(text),
     );
   }
 }
