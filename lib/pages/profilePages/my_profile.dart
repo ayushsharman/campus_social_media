@@ -52,10 +52,12 @@ class _ProfilePageState extends State<ProfilePage>
                   ),
                 ),
 
+                //Settings Icon
                 const Padding(
                   padding: EdgeInsets.all(30.0),
                   child: Icon(
-                    Iconsax.save_2,
+                    Iconsax.setting,
+                    color: Colors.white,
                     size: 40,
                   ),
                 ),
