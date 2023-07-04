@@ -47,15 +47,8 @@ class LoginPage extends StatelessWidget {
                 name: "Email",
               ),
               const SizedBox(height: 10),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Password',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
+              CustomTextField(
+                name: 'Password',
               ),
               const SizedBox(height: 30),
               const CustomButton(),
