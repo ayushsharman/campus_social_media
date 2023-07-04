@@ -1,4 +1,5 @@
 import 'package:Feeleeria/auth/login.dart';
+import 'package:Feeleeria/navigation/navBar.dart';
 import 'package:Feeleeria/widgets/auth/button.dart';
 import 'package:Feeleeria/widgets/auth/text_field.dart';
 import 'package:flutter/material.dart';
@@ -58,6 +59,14 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(height: 30),
               CustomButton(
                 text: 'Register', // Replace with appropriate button text
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNav(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 30),
               GestureDetector(

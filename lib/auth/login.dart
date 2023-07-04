@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../constant/app_colos.dart';
+import '../navigation/navBar.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -54,6 +55,14 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 30),
               CustomButton(
                 text: 'Login',
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNav(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 30),
               GestureDetector(
