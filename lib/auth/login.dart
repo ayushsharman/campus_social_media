@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../constant/appColos.dart';
 
@@ -9,22 +10,28 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.blue,
+      backgroundColor: AppColor.blue, // Use the blue color from the theme
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Icon(
+                Iconsax.login, // Add the login icon from iconsax
+                size: 80,
+                color: Colors.white,
+              ),
+              SizedBox(height: 20),
               Text(
                 'Login',
                 style: GoogleFonts.poppins(
-                  fontSize: 24,
+                  fontSize: 30, // Increase the size of the login text
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Email',
@@ -35,7 +42,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Password',
@@ -46,24 +53,37 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   // Perform login action
                 },
-                child: const Text('Login'),
+                child: Text('Login'),
                 style: ElevatedButton.styleFrom(
                   primary:
                       AppColor.orange, // Use the orange color from the theme
                   onPrimary: Colors.white,
-                  textStyle: const TextStyle(
+                  textStyle: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              GestureDetector(
+                onTap: () {
+                  // Perform register action
+                },
+                child: Text(
+                  "Don't have an account? Register",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    decoration: TextDecoration.underline,
                   ),
                 ),
               ),
