@@ -20,7 +20,7 @@ class SystemPage extends StatelessWidget {
             ),
 
             //CustomAppBar
-            CustomAppBar(
+            const CustomAppBar(
               name: 'System',
               isSystem: true,
             ),

@@ -9,11 +9,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
+            SizedBox(
               height: 12,
             ),
 
@@ -23,10 +23,10 @@ class HomePage extends StatelessWidget {
             ),
 
             //Story section
-            const SizedBox(
+            SizedBox(
               height: 20,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 10.0),
               child: StoryIcon(
                 images: [
@@ -36,21 +36,21 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            const Divider(
+            Divider(
               height: 1,
               color: Colors.grey,
             ),
 
             //Post section
-            const ImagePostCard(
+            ImagePostCard(
               post: "assets/post.png",
               image: "assets/Profile Photo (1).png",
             ),
-            const ImagePostCard(
+            ImagePostCard(
               post: "assets/post.png",
               image: "assets/Profile Photo.png",
             ),
-            const ImagePostCard(
+            ImagePostCard(
               post: "assets/post.png",
               image: "assets/Profile Photo.png",
             ),

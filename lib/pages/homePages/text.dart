@@ -39,7 +39,7 @@ class _TextPageState extends State<TextPage>
           const SizedBox(
             height: 12,
           ),
-          CustomAppBar(name: "Text"),
+          const CustomAppBar(name: "Text"),
           const SizedBox(
             height: 10,
           ),

@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
   final String name;
   final bool? isSystem;
 
-  CustomAppBar({
+  const CustomAppBar({
     Key? key,
     required this.name,
     this.isSystem,
