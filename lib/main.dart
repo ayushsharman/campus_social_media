@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'navigation/navBar.dart';
+import 'auth/login.dart';
 
 // import 'auth/login.dart';
 
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNav(),
+      home: LoginPage(),
     );
   }
 }

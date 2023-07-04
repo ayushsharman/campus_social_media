@@ -1,114 +1,70 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../constant/appColos.dart';
+
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 80.0),
+      backgroundColor: AppColor.blue,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.lock,
-                size: 80.0,
-                color: Color(0xFF3E8DE3),
-              ),
-              const SizedBox(height: 30.0),
               Text(
                 'Login',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    fontSize: 32.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF3E8DE3),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 20),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
                   ),
                 ),
               ),
-              const SizedBox(height: 50.0),
+              const SizedBox(height: 10),
               TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Username',
-                  prefixIcon: Icon(Icons.person),
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
               ),
-              const SizedBox(height: 20.0),
-              TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Password',
-                  prefixIcon: Icon(Icons.lock),
-                  border: OutlineInputBorder(),
-                ),
-                obscureText: true,
-              ),
-              const SizedBox(height: 30.0),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Perform login logic here
+                  // Perform login action
                 },
+                child: const Text('Login'),
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xFFFF5C00),
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 40.0, vertical: 12.0),
+                  primary:
+                      AppColor.orange, // Use the orange color from the theme
+                  onPrimary: Colors.white,
+                  textStyle: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                ),
-                child: Text(
-                  'Login',
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20.0),
-              TextButton(
-                onPressed: () {
-                  // Navigate to the signup page
-                },
-                child: Text(
-                  'Create an account',
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontSize: 16.0,
-                      color: Color(0xFF3E8DE3),
-                    ),
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  // Perform login with Google logic here
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/google_logo.png', // Add the path to your Google logo image
-                      height: 20.0,
-                    ),
-                    const SizedBox(width: 10.0),
-                    Text(
-                      'Login with Google',
-                      style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          fontSize: 16.0,
-                          color: Color(0xFF3E8DE3),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ],
