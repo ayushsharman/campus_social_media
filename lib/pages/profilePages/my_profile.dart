@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:Feeleeria/pages/profilePages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
@@ -53,12 +54,19 @@ class _ProfilePageState extends State<ProfilePage>
                 ),
 
                 //Settings Icon
-                const Padding(
-                  padding: EdgeInsets.all(30.0),
-                  child: Icon(
-                    Iconsax.setting,
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: IconButton(
+                    icon: const Icon(Iconsax.setting),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SettingsPage(),
+                        ),
+                      );
+                    },
                     color: Colors.white,
-                    size: 40,
                   ),
                 ),
 
