@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   String name;
+  bool? obscure;
   CustomTextField({
     Key? key,
     required this.name,
+    this.obscure,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscure ?? false,
       decoration: InputDecoration(
         hintText: name,
         filled: true,

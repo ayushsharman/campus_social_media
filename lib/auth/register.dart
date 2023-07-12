@@ -46,19 +46,20 @@ class RegisterPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               CustomTextField(
-                name: "Name", // Replace with appropriate field name
+                name: "Name",
               ),
               const SizedBox(height: 10),
               CustomTextField(
-                name: 'Email', // Replace with appropriate field name
+                name: 'Email',
               ),
               const SizedBox(height: 10),
               CustomTextField(
-                name: 'Password', // Replace with appropriate field name
+                name: 'Password',
+                obscure: true,
               ),
               const SizedBox(height: 30),
               CustomButton(
-                text: 'Register', // Replace with appropriate button text
+                text: 'Register',
                 onpressed: () {
                   Navigator.push(
                     context,

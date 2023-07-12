@@ -52,6 +52,7 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 10),
                 CustomTextField(
                   name: 'Password',
+                  obscure: true,
                 ),
                 const SizedBox(height: 30),
                 CustomButton(
