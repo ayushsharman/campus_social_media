@@ -8,9 +8,17 @@ import 'package:iconsax/iconsax.dart';
 
 import '../constant/app_colos.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,15 +55,18 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(height: 20),
               CustomTextField(
                 name: "Name",
+                controller: _nameController,
               ),
               const SizedBox(height: 10),
               CustomTextField(
                 name: 'Email',
+                controller: _emailController,
               ),
               const SizedBox(height: 10),
               CustomTextField(
                 name: 'Password',
                 obscure: true,
+                controller: _passwordController,
               ),
               const SizedBox(height: 30),
               CustomButton(

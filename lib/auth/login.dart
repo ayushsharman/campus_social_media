@@ -8,8 +8,16 @@ import 'package:iconsax/iconsax.dart';
 import '../constant/app_colos.dart';
 import '../navigation/navBar.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +56,13 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 20),
                 CustomTextField(
                   name: "Email",
+                  controller: _emailController,
                 ),
                 const SizedBox(height: 10),
                 CustomTextField(
                   name: 'Password',
                   obscure: true,
+                  controller: _passwordController,
                 ),
                 const SizedBox(height: 30),
                 CustomButton(

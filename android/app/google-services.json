@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "485415044134",
+    "project_id": "social-media-campus-app-ba25b",
+    "storage_bucket": "social-media-campus-app-ba25b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485415044134:android:293bb6adf5ea010983d2e7",
+        "android_client_info": {
+          "package_name": "com.example.social_media_campus_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485415044134-uojsafncvnom5a5goul3fh0755ncs034.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGcummDWpUYnMwhjTr0tEA2hl8dj2_zJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485415044134-uojsafncvnom5a5goul3fh0755ncs034.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
