@@ -16,74 +16,76 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.blue, // Use the blue color from the theme
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              const SizedBox(height: 60),
-              const Icon(
-                Iconsax.login, // Add the login icon from iconsax
-                size: 120,
-                color: Colors.white,
-              ),
-              const SizedBox(height: 10),
-              Text(
-                'Login',
-                style: GoogleFonts.poppins(
-                  fontSize: 60, // Increase the size of the login text
-                  fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                const SizedBox(height: 60),
+                const Icon(
+                  Iconsax.login, // Add the login icon from iconsax
+                  size: 120,
                   color: Colors.white,
                 ),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                'A place to find your mate on campus!',
-                style: TextStyle(
-                  fontSize: 20, // Increase the size of the login text
-                  color: Colors.white,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-              const SizedBox(height: 20),
-              CustomTextField(
-                name: "Email",
-              ),
-              const SizedBox(height: 10),
-              CustomTextField(
-                name: 'Password',
-              ),
-              const SizedBox(height: 30),
-              CustomButton(
-                text: 'Login',
-                onpressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const BottomNav(),
-                    ),
-                  );
-                },
-              ),
-              const SizedBox(height: 30),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const RegisterPage(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  "Don't have an account? Register",
-                  style: TextStyle(
+                const SizedBox(height: 10),
+                Text(
+                  'Login',
+                  style: GoogleFonts.poppins(
+                    fontSize: 60, // Increase the size of the login text
+                    fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 16,
-                    decoration: TextDecoration.underline,
                   ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10),
+                const Text(
+                  'A place to find your mate on campus!',
+                  style: TextStyle(
+                    fontSize: 20, // Increase the size of the login text
+                    color: Colors.white,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                CustomTextField(
+                  name: "Email",
+                ),
+                const SizedBox(height: 10),
+                CustomTextField(
+                  name: 'Password',
+                ),
+                const SizedBox(height: 30),
+                CustomButton(
+                  text: 'Login',
+                  onpressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BottomNav(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 30),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RegisterPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Don't have an account? Register",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
