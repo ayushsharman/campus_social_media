@@ -22,7 +22,7 @@ class RegisterPage extends StatelessWidget {
             children: [
               const SizedBox(height: 60),
               const Icon(
-                Iconsax.user, // Add the register icon from iconsax
+                Iconsax.tag_user, // Add the register icon from iconsax
                 size: 120,
                 color: Colors.white,
               ),
