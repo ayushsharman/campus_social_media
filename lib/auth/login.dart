@@ -1,12 +1,12 @@
 import 'package:Feeleeria/auth/register.dart';
 import 'package:Feeleeria/widgets/auth/button.dart';
 import 'package:Feeleeria/widgets/auth/text_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../constant/app_colos.dart';
-import '../navigation/navBar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -18,6 +18,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  void signUserIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text, password: _passwordController.text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,14 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 30),
                 CustomButton(
                   text: 'Login',
-                  onpressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const BottomNav(),
-                      ),
-                    );
-                  },
+                  onpressed: signUserIn,
                 ),
                 const SizedBox(height: 30),
                 GestureDetector(
