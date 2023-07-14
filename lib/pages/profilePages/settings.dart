@@ -1,7 +1,8 @@
-import 'package:Feeleeria/auth/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../auth/login.dart';
 import '../../constant/app_colos.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -74,6 +75,7 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
               onTap: () {
+                FirebaseAuth.instance.signOut();
                 Navigator.push(
                   context,
                   MaterialPageRoute(
