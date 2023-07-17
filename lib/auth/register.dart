@@ -22,17 +22,52 @@ class _RegisterPageState extends State<RegisterPage> {
   final _passwordController = TextEditingController();
   final _nameController = TextEditingController();
 
-  void signup() async {
-    //create user
-    FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: _emailController.text,
-      password: _passwordController.text,
+  void signUp() async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
     );
+    try {
+      FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
 
-    //add data
-    FirebaseFirestore.instance.collection('user').add({
-      'name': _nameController.text,
-    });
+      //add data
+      FirebaseFirestore.instance.collection('user').add({
+        'name': _nameController.text,
+      });
+
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'wrong-password') {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Login Failed'),
+              content: Text(e.toString()),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
   }
 
   @override
@@ -87,14 +122,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 30),
               CustomButton(
                 text: 'Register',
-                onpressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const BottomNav(),
-                    ),
-                  );
-                },
+                onpressed: signUp,
               ),
               const SizedBox(height: 30),
               GestureDetector(
