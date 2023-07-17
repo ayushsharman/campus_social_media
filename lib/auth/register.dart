@@ -2,6 +2,7 @@ import 'package:Feeleeria/auth/login.dart';
 import 'package:Feeleeria/navigation/navBar.dart';
 import 'package:Feeleeria/widgets/auth/button.dart';
 import 'package:Feeleeria/widgets/auth/text_field.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,10 +23,16 @@ class _RegisterPageState extends State<RegisterPage> {
   final _nameController = TextEditingController();
 
   void signup() async {
+    //create user
     FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: _emailController.text,
       password: _passwordController.text,
     );
+
+    //add data
+    FirebaseFirestore.instance.collection('user').add({
+      'name': _nameController.text,
+    });
   }
 
   @override
