@@ -1,6 +1,6 @@
-import 'package:Feeleeria/auth/pages/auth_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'auth/auth_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
