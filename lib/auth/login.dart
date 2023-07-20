@@ -11,7 +11,8 @@ import 'package:iconsax/iconsax.dart';
 import '../../constant/app_colos.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  final VoidCallback showRegisterPage;
+  const LoginPage({Key? key, required this.showRegisterPage}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -72,6 +73,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: AppColor.blue, // Use the blue color from the theme
       body: SafeArea(
         child: SingleChildScrollView(
@@ -121,14 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 30),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const RegisterPage(),
-                      ),
-                    );
-                  },
+                  onTap: widget.showRegisterPage,
                   child: const Text(
                     "Don't have an account? Register",
                     style: TextStyle(

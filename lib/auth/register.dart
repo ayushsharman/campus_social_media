@@ -1,5 +1,3 @@
-import 'package:Feeleeria/auth/login.dart';
-import 'package:Feeleeria/navigation/navBar.dart';
 import 'package:Feeleeria/widgets/auth/button.dart';
 import 'package:Feeleeria/widgets/auth/text_field.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -11,7 +9,8 @@ import 'package:iconsax/iconsax.dart';
 import '../../constant/app_colos.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  final VoidCallback showLoginPage;
+  const RegisterPage({Key? key, required this.showLoginPage}) : super(key: key);
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -73,6 +72,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: AppColor.blue, // Use the blue color from the theme
       body: SafeArea(
         child: Padding(
@@ -126,14 +126,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 30),
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
-                    ),
-                  );
-                },
+                onTap: widget.showLoginPage,
                 child: const Text(
                   "Already have an account? Login",
                   style: TextStyle(

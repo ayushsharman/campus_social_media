@@ -1,4 +1,4 @@
-import 'package:Feeleeria/auth/login.dart';
+import 'package:Feeleeria/auth/toggle.dart';
 import 'package:Feeleeria/navigation/navBar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ class AuthPage extends StatelessWidget {
           if (snapshot.hasData) {
             return const BottomNav();
           } else {
-            return const LoginPage();
+            return const TogglePage();
           }
         },
       ),
