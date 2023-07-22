@@ -113,7 +113,7 @@ class _LandingState extends State<LandingPage> {
                   ),
                   child: const Center(
                     child: Text(
-                      'SIGN UP',
+                      'REGISTER',
                       style: TextStyle(
                         fontWeight: FontWeight.w900,
                         color: Colors.white,

@@ -18,6 +18,7 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmpasswordController = TextEditingController();
   final _nameController = TextEditingController();
 
   void signUp() async {
@@ -73,7 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: AppColor.blue, // Use the blue color from the theme
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -86,9 +87,9 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 10),
               Text(
-                'Register',
+                'Welcome to Feeleeria',
                 style: GoogleFonts.poppins(
-                  fontSize: 60, // Increase the size of the register text
+                  fontSize: 30, // Increase the size of the register text
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -117,6 +118,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 name: 'Password',
                 obscure: true,
                 controller: _passwordController,
+              ),
+              const SizedBox(height: 10),
+              CustomTextField(
+                name: 'Confirm Password',
+                obscure: true,
+                controller: _confirmpasswordController,
               ),
               const SizedBox(height: 30),
               CustomButton(
