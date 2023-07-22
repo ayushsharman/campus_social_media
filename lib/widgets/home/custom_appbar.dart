@@ -48,7 +48,8 @@ class CustomAppBar extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 12.0, right: 8.0),
                     child: Text(
                       name,
-                      style: GoogleFonts.sail(
+                      style: const TextStyle(
+                        fontFamily: 'Sail',
                         fontSize: 40,
                         color: AppColor.orange,
                         fontWeight: FontWeight.bold,

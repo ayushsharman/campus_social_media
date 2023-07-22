@@ -9,8 +9,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../constant/app_colos.dart';
 
 class RegisterPage extends StatefulWidget {
-  final VoidCallback showLoginPage;
-  const RegisterPage({Key? key, required this.showLoginPage}) : super(key: key);
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -126,7 +125,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 30),
               GestureDetector(
-                onTap: widget.showLoginPage,
+                onTap: () {},
                 child: const Text(
                   "Already have an account? Login",
                   style: TextStyle(

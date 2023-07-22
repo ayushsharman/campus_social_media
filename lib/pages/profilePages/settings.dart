@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../auth/toggle.dart';
+import '../../auth/landing.dart';
 import '../../constant/app_colos.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -81,7 +81,7 @@ class SettingsPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const TogglePage(),
+                    builder: (context) => LandingPage(),
                   ),
                 );
               },
