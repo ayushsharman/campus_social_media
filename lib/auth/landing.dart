@@ -1,7 +1,8 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:Feeleeria/auth/login.dart';
 import 'package:Feeleeria/auth/register.dart';
 import 'package:Feeleeria/constant/app_colos.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {
@@ -13,37 +14,59 @@ class _LandingState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Align(
-              alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10.0),
+      backgroundColor: AppColor.blue,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Align(
+            alignment: Alignment.center,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12.0),
+              child: Container(
+                decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black,
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
                 child: Image.asset(
                   'assets/Feeleeria.png',
-                  height: 200.0,
                   width: 200.0,
-                  fit: BoxFit.cover,
                 ),
               ),
             ),
-            const Text(
-              'Feeleeria',
-              style: TextStyle(
-                fontSize: 22.0,
-              ),
-            )
-          ],
-        ),
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Feeleeria',
+            style: TextStyle(
+              fontSize: 40.0,
+              fontFamily: "Sail",
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 10),
+          // Add a subtitle or tagline
+          const Text(
+            'Find Your Perfect Match on Campus',
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Colors.white,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomAppBar(
+        color: AppColor.blue,
         elevation: 0.0,
         child: Padding(
-          padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
+          padding: const EdgeInsets.all(40.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -56,10 +79,10 @@ class _LandingState extends State<LandingPage> {
                   );
                 },
                 child: Container(
-                  height: 45.0,
+                  height: 40.0,
                   width: 130.0,
                   decoration: BoxDecoration(
-                    color: AppColor.blue,
+                    color: AppColor.orange,
                     borderRadius: BorderRadius.circular(40.0),
                     border: Border.all(color: Colors.grey),
                   ),
