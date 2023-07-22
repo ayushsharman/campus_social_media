@@ -53,9 +53,8 @@ class _LandingState extends State<LandingPage> {
           const SizedBox(height: 10),
           // Add a subtitle or tagline
           const Text(
-            'Find Your Perfect Match on Campus',
+            'Find Your Perfect Company on Campus',
             style: TextStyle(
-              fontSize: 18.0,
               color: Colors.white,
               fontStyle: FontStyle.italic,
             ),
