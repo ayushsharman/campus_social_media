@@ -88,18 +88,17 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  'Login',
+                  'Welcome Back!',
                   style: GoogleFonts.poppins(
-                    fontSize: 60, // Increase the size of the login text
+                    fontSize: 30, // Increase the size of the login text
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  'A place to find your mate on campus!',
+                  'Log into your account and get started!!',
                   style: TextStyle(
-                    fontSize: 20, // Increase the size of the login text
                     color: Colors.white,
                     fontStyle: FontStyle.italic,
                   ),
@@ -114,6 +113,24 @@ class _LoginPageState extends State<LoginPage> {
                   name: 'Password',
                   obscure: true,
                   controller: _passwordController,
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: InkWell(
+                      onTap: () {},
+                      child: const Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 30),
                 CustomButton(
