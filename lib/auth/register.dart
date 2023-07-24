@@ -73,7 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: AppColor.blue, // Use the blue color from the theme
+      backgroundColor: AppColor.blue, 
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

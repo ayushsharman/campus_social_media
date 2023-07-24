@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:Feeleeria/auth/register.dart';
+import 'package:Feeleeria/navigation/navBar.dart';
 import 'package:Feeleeria/widgets/auth/button.dart';
 import 'package:Feeleeria/widgets/auth/text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../constant/app_colos.dart';
+import '../services/firebase_errors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -21,6 +23,15 @@ class _LoginPageState extends State<LoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  void showErrorDialog(BuildContext context, FirebaseAuthException e) {
+    String errorMessage = FirebaseErrors.getErrorMessage(e.code);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(errorMessage),
+      ),
+    );
+  }
+
   void signUserIn() async {
     showDialog(
       context: context,
@@ -32,31 +43,21 @@ class _LoginPageState extends State<LoginPage> {
     );
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: _emailController.text, password: _passwordController.text);
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
 
       Navigator.pop(context);
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const BottomNav(),
+        ),
+      );
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'wrong-password') {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('Login Failed'),
-              content: Text(e.toString()),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('OK'),
-                ),
-              ],
-            );
-          },
-        );
-      } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
-      }
+      showErrorDialog(context, e);
+      Navigator.pop(context);
     } catch (e) {
       print(e);
     }
