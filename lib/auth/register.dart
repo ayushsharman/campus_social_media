@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:Feeleeria/auth/login.dart';
 import 'package:Feeleeria/widgets/auth/button.dart';
 import 'package:Feeleeria/widgets/auth/text_field.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -77,6 +78,7 @@ class _RegisterPageState extends State<RegisterPage> {
     } on FirebaseAuthException catch (e) {
       String errorMessage = FirebaseErrors.getErrorMessage(e.code);
       showErrorSnackBar(context, errorMessage);
+      Navigator.pop(context);
     } catch (e) {
       print(e);
     }
@@ -145,7 +147,13 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 30),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginPage(),
+                      ));
+                },
                 child: const Text(
                   "Already have an account? Login",
                   style: TextStyle(
