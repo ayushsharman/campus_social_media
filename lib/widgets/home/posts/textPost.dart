@@ -109,8 +109,16 @@ class TextPostCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     IconButton(
-                      icon: const ImageIcon(
-                        AssetImage('assets/hand shake.png'),
+                      icon: const Icon(
+                        Iconsax.align_left,
+                      ),
+                      onPressed: () {
+                        // Handle like button click
+                      },
+                    ),
+                    IconButton(
+                      icon: const Icon(
+                        Iconsax.arrow_swap_horizontal,
                       ),
                       onPressed: () {
                         // Handle like button click
@@ -132,7 +140,6 @@ class TextPostCard extends StatelessWidget {
                         // Handle share button click
                       },
                     ),
-                    const SizedBox(width: 8),
                   ],
                 ),
               ],
