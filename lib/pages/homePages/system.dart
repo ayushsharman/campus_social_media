@@ -8,7 +8,6 @@ import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 import '../../constant/app_colos.dart';
 import '../../widgets/home/custom_appbar.dart';
 import '../../widgets/home/posts/imagePost.dart';
-import '../../widgets/home/posts/textPost.dart';
 
 class SystemPage extends StatefulWidget {
   const SystemPage({Key? key}) : super(key: key);
