@@ -38,6 +38,8 @@ dependencies:
   flutter_speed_dial: ^7.0.0
   google_fonts: ^5.0.0
   iconsax: ^0.0.8
+  image_picker: ^1.0.1
+  permission_handler: ^10.4.3
   persistent_bottom_nav_bar: ^5.0.2
   stories_for_flutter: ^1.2.0
   tab_indicator_styler: ^2.0.0
@@ -81,6 +83,5 @@ flutter:
     - family: Sail
       fonts:
         - asset: fonts/Sail-Regular.ttf
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
