@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
-
 import '../../constant/app_colos.dart';
 import '../../widgets/home/posts/imagePost.dart';
 import '../../widgets/home/posts/textPost.dart';
@@ -39,36 +37,18 @@ class _ProfilePageState extends State<ProfilePage>
     super.dispose();
   }
 
-  // Method to request permission for accessing the photo library
-  Future<bool> _requestPhotoLibraryPermission() async {
-    final status = await Permission.photos.request();
-    return status.isGranted;
-  }
-
-  // Method to pick an image from the photo library
   Future<XFile?> _pickImage() async {
-    final bool isPermissionGranted = await _requestPhotoLibraryPermission();
-    if (!isPermissionGranted) return null;
-
-    final XFile? image =
-        await _imagePicker.pickImage(source: ImageSource.gallery);
-    return image;
-  }
-
-  // Method to handle banner picture selection
-  void _pickBannerPicture() async {
-    final XFile? imageFile = await _pickImage();
-    setState(() {
-      _bannerImage = imageFile;
-    });
-
-    if (imageFile != null) {
-      // Save the image to Firestore or use it as needed
-      // For example, you can upload the image to Firebase Storage and save the URL in Firestore.
+    try {
+      final XFile? image =
+          await _imagePicker.pickImage(source: ImageSource.gallery);
+      return image;
+    } catch (e) {
+      // Handle any exceptions here (e.g., user cancels picking image, or image not available)
+      print('Error while picking image: $e');
+      return null;
     }
   }
 
-  // Method to show default text when no image is available
   Widget _buildDefaultImageWidget(XFile? imageFile) {
     return imageFile != null
         ? Image.file(
@@ -83,7 +63,7 @@ class _ProfilePageState extends State<ProfilePage>
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
               gradient: LinearGradient(
-                colors: [AppColor.blue, Colors.deepPurple],
+                colors: [AppColor.orange, AppColor.blue],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -97,14 +77,25 @@ class _ProfilePageState extends State<ProfilePage>
           );
   }
 
-  // Method to handle profile picture selection
+  void _pickBannerPicture() async {
+    final XFile? imageFile = await _pickImage();
+    if (imageFile != null) {
+      setState(() {
+        _bannerImage = imageFile;
+      });
+
+      // Save the image to Firestore or use it as needed
+      // For example, you can upload the image to Firebase Storage and save the URL in Firestore.
+    }
+  }
+
   void _pickProfilePicture() async {
     final XFile? imageFile = await _pickImage();
-    setState(() {
-      _profileImage = imageFile;
-    });
-
     if (imageFile != null) {
+      setState(() {
+        _profileImage = imageFile;
+      });
+
       // Save the image to Firestore or use it as needed
       // For example, you can upload the image to Firebase Storage and save the URL in Firestore.
     }
@@ -125,6 +116,11 @@ class _ProfilePageState extends State<ProfilePage>
                   child: Container(
                     height: 200,
                     decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [AppColor.orange, AppColor.blue],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                       image: _bannerImage != null
                           ? DecorationImage(
                               image: FileImage(File(_bannerImage!.path)),
