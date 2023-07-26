@@ -51,11 +51,9 @@ class _ProfilePageState extends State<ProfilePage>
 
   Widget _buildDefaultImageWidget(XFile? imageFile) {
     return imageFile != null
-        ? Image.file(
-            File(imageFile.path),
-            width: 120,
-            height: 120,
-            fit: BoxFit.cover,
+        ? CircleAvatar(
+            radius: 60,
+            backgroundImage: FileImage(File(imageFile.path)),
           )
         : Container(
             width: 120,
@@ -126,16 +124,10 @@ class _ProfilePageState extends State<ProfilePage>
                               image: FileImage(File(_bannerImage!.path)),
                               fit: BoxFit.cover,
                             )
-                          : _profileImage != null
-                              ? DecorationImage(
-                                  image: FileImage(File(_profileImage!.path)),
-                                  fit: BoxFit.cover,
-                                )
-                              : const DecorationImage(
-                                  image:
-                                      AssetImage('assets/Profile Banner.jpg'),
-                                  fit: BoxFit.cover,
-                                ),
+                          : const DecorationImage(
+                              image: AssetImage('assets/Profile Banner.jpg'),
+                              fit: BoxFit.cover,
+                            ),
                     ),
                   ),
                 ),
