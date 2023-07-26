@@ -91,6 +91,18 @@ class SettingsPage extends StatelessWidget {
                 );
               },
             ),
+            ListTile(
+              leading: const Icon(Icons.contact_page),
+              title: Text(
+                'Contact Us',
+                style: TextStyle(
+                  fontFamily: GoogleFonts.poppins().fontFamily,
+                ),
+              ),
+              onTap: () {
+                // Navigate to profile settings page
+              },
+            ),
           ],
         ),
       ),
