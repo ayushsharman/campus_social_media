@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../auth/forgot_pass.dart';
 import '../../auth/landing.dart';
 import '../../constant/app_colos.dart';
 
@@ -55,7 +56,11 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                // Navigate to change password page
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ForgotPasswordPage(),
+                    ));
               },
             ),
             const Divider(),

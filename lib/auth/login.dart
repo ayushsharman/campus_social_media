@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:Feeleeria/auth/forgot_pass.dart';
 import 'package:Feeleeria/auth/register.dart';
 import 'package:Feeleeria/navigation/navBar.dart';
 import 'package:Feeleeria/widgets/auth/button.dart';
@@ -119,7 +120,13 @@ class _LoginPageState extends State<LoginPage> {
                 child: Padding(
                   padding: const EdgeInsets.only(right: 10.0),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ForgotPasswordPage(),
+                          ));
+                    },
                     child: const Align(
                       alignment: Alignment.centerRight,
                       child: Text(
