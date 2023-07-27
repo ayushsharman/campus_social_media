@@ -276,24 +276,23 @@ class _ProfilePageState extends State<ProfilePage>
               height: 400, // Adjust the height as needed
               child: TabBarView(
                 controller: _tabController,
-                children: const [
+                children: [
                   //Posts/System section
                   SingleChildScrollView(
                     child: Column(
                       children: [
                         ImagePostCard(
+                          name: _userName,
                           post: "assets/post.png",
                           image: "assets/Profile Photo (1).png",
                         ),
                         ImagePostCard(
+                          name: _userName,
                           post: "assets/post.png",
-                          image: "assets/Profile Photo (2).png",
+                          image: "assets/Profile Photo (1).png",
                         ),
                         ImagePostCard(
-                          post: "assets/post.png",
-                          image: "assets/Profile Photo.png",
-                        ),
-                        ImagePostCard(
+                          name: _userName,
                           post: "assets/post.png",
                           image: "assets/Profile Photo (1).png",
                         ),

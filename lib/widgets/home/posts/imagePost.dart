@@ -9,11 +9,13 @@ import '../../../constant/app_colos.dart';
 class ImagePostCard extends StatelessWidget {
   final String post;
   final String image;
+  final String? name;
 
   const ImagePostCard({
     Key? key,
     required this.post,
     required this.image,
+    this.name,
   }) : super(key: key);
 
   @override
@@ -36,7 +38,7 @@ class ImagePostCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'John Doe',
+                      name ?? "Loading...",
                       style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
