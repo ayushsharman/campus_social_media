@@ -24,7 +24,6 @@ class _ProfilePageState extends State<ProfilePage>
   final _imagePicker = ImagePicker();
   XFile? _profileImage;
   XFile? _bannerImage;
-  User? _currentUser;
   String? _userName;
 
   @override
@@ -43,7 +42,6 @@ class _ProfilePageState extends State<ProfilePage>
             .doc(currentUser.uid)
             .get();
         setState(() {
-          _currentUser = currentUser;
           _userName = userSnapshot.get('name');
         });
       }
