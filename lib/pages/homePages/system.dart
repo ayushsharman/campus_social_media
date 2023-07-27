@@ -40,7 +40,10 @@ class _SystemPageState extends State<SystemPage>
           const SizedBox(
             height: 12,
           ),
-          const CustomAppBar(name: "System"),
+          const CustomAppBar(
+            name: "System",
+            isSystem: true,
+          ),
           const SizedBox(
             height: 10,
           ),
