@@ -61,11 +61,14 @@ class _RegisterPageState extends State<RegisterPage> {
       await FirebaseFirestore.instance
           .collection('users')
           .doc(authResult.user!.uid)
-          .set({
-        'name': _nameController.text,
-        'email': _emailController.text,
-        // Add other user data fields as needed
-      });
+          .set(
+        {
+          'name': _nameController.text,
+          'email': _emailController.text,
+          'uid': authResult.user!.uid,
+        },
+        SetOptions(merge: true),
+      );
 
       Navigator.pop(context);
 

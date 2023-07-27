@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
@@ -25,8 +27,10 @@ class ChatPage extends StatelessWidget {
               size: 30,
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const BottomNav()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const BottomNav()),
+              );
             },
           ),
         ),
@@ -86,69 +90,87 @@ class ChatPage extends StatelessWidget {
             ),
             const SizedBox(height: 15),
 
-            //Recent Messages
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Recent", style: GoogleFonts.poppins(fontSize: 16)),
-                  const SizedBox(height: 10),
-                  Row(
+            // Use FutureBuilder to fetch user data from Firestore
+            FutureBuilder<QuerySnapshot<Map<String, dynamic>>>(
+              future: FirebaseFirestore.instance.collection('users').get(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (snapshot.hasError) {
+                  // Handle any errors that occur while fetching data
+                  return Text('Error: ${snapshot.error}');
+                } else {
+                  // Process the fetched data
+                  final userData = snapshot.data!.docs
+                      .map((doc) => doc.data())
+                      .where((data) =>
+                          data['uid'] !=
+                          FirebaseAuth.instance.currentUser
+                              ?.uid) // Compare user ID to exclude current user
+                      .toList();
+
+                  // Exclude current user data from the list
+                  final currentUserId = FirebaseAuth.instance.currentUser?.uid;
+                  final filteredUserData = userData
+                      .where((data) => data['uid'] != currentUserId)
+                      .toList();
+
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CircularChats(
-                        image: 'assets/Profile Photo (1).png',
-                        name: "John Doe",
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Recent",
+                              style: GoogleFonts.poppins(fontSize: 16),
+                            ),
+                            const SizedBox(height: 10),
+                            SizedBox(
+                              height: 120,
+                              child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: filteredUserData.length,
+                                itemBuilder: (context, index) {
+                                  final userDataItem = filteredUserData[index];
+                                  return Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: CircularChats(
+                                      image: 'assets/Profile Photo.png',
+                                      name: userDataItem['name'],
+                                      // Use the email if you need it for MessageTray
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      const SizedBox(
-                        width: 20,
+                      const SizedBox(height: 10),
+                      const Divider(
+                        height: .7,
+                        color: Colors.grey,
                       ),
-                      CircularChats(
-                        image: 'assets/Profile Photo.png',
-                        name: "Lisa Koi",
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      CircularChats(
-                        image: 'assets/Profile Photo (2).png',
-                        name: "Zoe Lu",
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: filteredUserData.length,
+                        itemBuilder: (context, index) {
+                          final userDataItem = filteredUserData[index];
+                          return MessageTray(
+                            name: userDataItem['name'],
+                            image: 'assets/Profile Photo.png',
+                            message: 'hello!',
+                          );
+                        },
                       ),
                     ],
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 10),
-            const Divider(
-              height: .7,
-              color: Colors.grey,
-            ),
-
-            //Message Tray
-            MessageTray(
-              name: 'John Doe',
-              image: 'assets/Profile Photo.png',
-              message: 'hello!',
-            ),
-            MessageTray(
-              name: 'Zoe Lu',
-              image: 'assets/Profile Photo (2).png',
-              message: 'How are you what have you been doing?',
-            ),
-            MessageTray(
-              name: 'Jacob Williams',
-              message: "I'm the king!",
-            ),
-            MessageTray(
-              name: 'Kane',
-              image: 'assets/Profile Photo (1).png',
-              message: "Meet me on sunday",
-            ),
-            MessageTray(
-              name: 'Undertake',
-              message: "Dont' go on sunday",
+                  );
+                }
+              },
             ),
           ],
         ),

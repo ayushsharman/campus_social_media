@@ -1,3 +1,4 @@
+import 'package:Feeleeria/pages/chatPages/personal_message.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,7 +19,13 @@ class MessageTray extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PersonalMessage(name: "John Doe"),
+            ));
+      },
       child: Container(
         padding: const EdgeInsets.all(16.0),
         decoration: const BoxDecoration(

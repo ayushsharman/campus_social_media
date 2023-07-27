@@ -29,7 +29,7 @@ class PersonalMessage extends StatelessWidget {
               size: 30,
             ),
             onPressed: () {
-              // Handle back button press
+              Navigator.pop(context);
             },
           ),
         ),
@@ -51,9 +51,7 @@ class PersonalMessage extends StatelessWidget {
                 color: AppColor.blue,
                 size: 30,
               ),
-              onPressed: () {
-                // Handle back button press
-              },
+              onPressed: () {},
             ),
           ),
         ],

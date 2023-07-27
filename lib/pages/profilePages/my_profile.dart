@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:Feeleeria/pages/profilePages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,6 +8,8 @@ import '../../constant/app_colos.dart';
 import '../../widgets/home/posts/imagePost.dart';
 import '../../widgets/home/posts/textPost.dart';
 import '../../widgets/profile/analytics_count.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -20,21 +21,35 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
   final _imagePicker = ImagePicker();
   XFile? _profileImage;
   XFile? _bannerImage;
+  User? _currentUser;
+  String? _userName;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+    _fetchUserData();
   }
 
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
+  Future<void> _fetchUserData() async {
+    try {
+      final currentUser = FirebaseAuth.instance.currentUser;
+      if (currentUser != null) {
+        final userSnapshot = await FirebaseFirestore.instance
+            .collection('users')
+            .doc(currentUser.uid)
+            .get();
+        setState(() {
+          _currentUser = currentUser;
+          _userName = userSnapshot.get('name');
+        });
+      }
+    } catch (e) {
+      print('Error while fetching user data: $e');
+    }
   }
 
   Future<XFile?> _pickImage() async {
@@ -43,7 +58,6 @@ class _ProfilePageState extends State<ProfilePage>
           await _imagePicker.pickImage(source: ImageSource.gallery);
       return image;
     } catch (e) {
-      // Handle any exceptions here (e.g., user cancels picking image, or image not available)
       print('Error while picking image: $e');
       return null;
     }
@@ -81,9 +95,6 @@ class _ProfilePageState extends State<ProfilePage>
       setState(() {
         _bannerImage = imageFile;
       });
-
-      // Save the image to Firestore or use it as needed
-      // For example, you can upload the image to Firebase Storage and save the URL in Firestore.
     }
   }
 
@@ -93,9 +104,6 @@ class _ProfilePageState extends State<ProfilePage>
       setState(() {
         _profileImage = imageFile;
       });
-
-      // Save the image to Firestore or use it as needed
-      // For example, you can upload the image to Firebase Storage and save the URL in Firestore.
     }
   }
 
@@ -108,7 +116,6 @@ class _ProfilePageState extends State<ProfilePage>
           children: [
             Stack(
               children: [
-                // Banner
                 GestureDetector(
                   onTap: _pickBannerPicture,
                   child: Container(
@@ -131,8 +138,6 @@ class _ProfilePageState extends State<ProfilePage>
                     ),
                   ),
                 ),
-
-                //Settings Icon
                 Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: IconButton(
@@ -148,25 +153,23 @@ class _ProfilePageState extends State<ProfilePage>
                     color: Colors.black,
                   ),
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Name heading
                     Padding(
                       padding: const EdgeInsets.only(top: 200.0, left: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Elizabeth Olsen",
+                            _userName ?? 'Your Name',
                             style: GoogleFonts.poppins(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Text(
-                            "Brooklyn NYK",
+                            "Chandigarh University",
                             style: GoogleFonts.poppins(
                               color: Colors.grey,
                               fontSize: 18,
